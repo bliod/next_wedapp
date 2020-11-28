@@ -8,6 +8,16 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../theme';
 import UserContext from '../contexts/UserContext';
 import Cookie from 'js-cookie';
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+html, body {
+            height: 100%;
+            margin: 0;
+            width: 100%;
+
+        }
+`
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -42,12 +52,13 @@ export default function MyApp(props) {
     }
   };
   return (
-    <UserContext.Provider value={{isAuthenticated: !!user, user, updateUser}}>
+    <UserContext.Provider value={{ isAuthenticated: !!user, user, updateUser }}>
       <React.Fragment>
         <Head>
           <title>My page</title>
           <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
         </Head>
+        <GlobalStyle></GlobalStyle>
         <ThemeProvider theme={theme}>
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />

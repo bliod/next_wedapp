@@ -16,6 +16,13 @@
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-google-maps": "^9.4.5",
-    "sass": "^1.27.0"
+    "sass": "^1.27.0",
+    "styled-components": "^5.2.1"
+  },
+  "resolutions": {
+    "styled-components": "^5"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.12.0"
   }
 }
