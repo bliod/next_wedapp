@@ -1,5 +1,5 @@
 
-import '../styles/globals.css';
+// import '../styles/globals.css';
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
@@ -9,6 +9,8 @@ import theme from '../theme';
 import UserContext from '../contexts/UserContext';
 import Cookie from 'js-cookie';
 import { createGlobalStyle } from 'styled-components'
+import "fontsource-roboto"
+
 
 const GlobalStyle = createGlobalStyle`
 html, body {
@@ -16,6 +18,9 @@ html, body {
             margin: 0;
             width: 100%;
 
+        }
+        * {
+          box-sizing: border-box;
         }
 `
 

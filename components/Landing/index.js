@@ -20,7 +20,8 @@ const LandingHeader = styled(Typography)`
     font-family: 'Parisienne', cursive !important;
     text-shadow: 2px 2px 0 #7a7a7a;
     font-size: 6rem !important;
-
+    /* opacity: 1;
+    transition: opacity 2s ease; */
     @media (max-width: 600px) {
         font-size: 3rem !important;
   }
