@@ -33,8 +33,9 @@ const CustomTypography = styled(Typography)`
     color: #333;
     padding-bottom: 30px;    
     @media (max-width: 1024px) {
-        font-size: ${props => props.smaller ? '1.1rem !important;' : '1.25rem !important;'};
+        ${props => props.smaller ? 'font-size: 1.1rem !important;' : 'font-size: 1.25rem !important;'};
         padding-bottom: 20px;  
+
         /* font-size: 1.25rem !important; */
   }
 `;
