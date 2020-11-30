@@ -15,7 +15,8 @@ const Personal = ({ data }) => {
 export default Personal;
 
 export async function getStaticProps({params}) {
-    const id = params.id.slice(-1);
+    const extractId = params.id.split('_');
+    const id = extractId[1];
     const response = await fetch(`${process.env.apiUrl}/people/${id}`)
     const data = await response.json()
     return {
@@ -28,8 +29,8 @@ export async function getStaticPaths() {
     const people = await response.json();
     const paths = people.map((people) => {
         const wordsAtPeople = people.name.split(' ');
-        const indentifier = `${wordsAtPeople[0].slice(0,1)}${people.id}`;
-        console.log(indentifier)
+        const indentifier = `${wordsAtPeople[0].slice(0,1)}_${people.id}`;
+        // console.log(indentifier)
         return {
             params: {id: indentifier}
         }
