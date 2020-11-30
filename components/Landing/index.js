@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Typography } from "@material-ui/core";
-import "fontsource-parisienne";
 
 const LandingWrapper = styled.div`
     height: 100vh;
@@ -20,16 +19,12 @@ const LandingHeader = styled(Typography)`
     font-family: 'Parisienne', cursive !important;
     text-shadow: 2px 2px 0 #7a7a7a;
     font-size: 6rem !important;
-    /* opacity: 1;
-    transition: opacity 2s ease; */
     @media (max-width: 600px) {
         font-size: 3rem !important;
   }
-
 `;
 
 const index = ({ addresses }) => {
-
     return (
         <LandingWrapper>
             <LandingHeader>

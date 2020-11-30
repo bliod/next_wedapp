@@ -10,14 +10,13 @@ import UserContext from '../contexts/UserContext';
 import Cookie from 'js-cookie';
 import { createGlobalStyle } from 'styled-components'
 import "fontsource-roboto"
-
+import "fontsource-parisienne";
 
 const GlobalStyle = createGlobalStyle`
 html, body {
             height: 100%;
             margin: 0;
             width: 100%;
-
         }
         * {
           box-sizing: border-box;
@@ -65,7 +64,6 @@ export default function MyApp(props) {
         </Head>
         <GlobalStyle></GlobalStyle>
         <ThemeProvider theme={theme}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <Component {...pageProps} />
         </ThemeProvider>

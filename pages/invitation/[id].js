@@ -1,3 +1,4 @@
+import { Pages } from '@material-ui/icons';
 import React from 'react';
 import Landing from '../../components/Landing';
 import Main from '../../components/Main';
@@ -13,29 +14,31 @@ const Personal = ({ data }) => {
 
 export default Personal;
 
-export async function getStaticProps({ params }) {
-        const response = await fetch(`${process.env.apiUrl}/people/${params.id}`)
-        const data = await response.json()
+export async function getStaticProps({params}) {
+    const id = params.id.slice(-1);
+    const response = await fetch(`${process.env.apiUrl}/people/${id}`)
+    const data = await response.json()
     return {
-        props: { data } // will be passed to the page component as props
+        props: {data} // will be passed to the page component as props
     }
 }
 
 export async function getStaticPaths() {
-        const response = await fetch(`${process.env.apiUrl}/people`);
-        const people = await response.json();
-        // console.log(people);
-        const paths= people.map((people) => {
-            return {
-                params: { id: people.id.toString() },
-            }
-        });  
+    const response = await fetch(`${process.env.apiUrl}/people`);
+    const people = await response.json();
+    const paths = people.map((people) => {
+        const wordsAtPeople = people.name.split(' ');
+        const indentifier = `${wordsAtPeople[0].slice(0,1)}${people.id}`;
+        console.log(indentifier)
+        return {
+            params: {id: indentifier}
+        }
+    });
 
-    // console.log(paths)
     return {
         paths: [
-          ...paths
+            ...paths
         ],
         fallback: false
-      }
+    }
 }
