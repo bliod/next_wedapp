@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container, Typography, Grid } from "@material-ui/core";
 import MailOutlinedIcon from '@material-ui/icons/MailOutlined';
+import StarIcon from '@material-ui/icons/Star';
 
 const Wrapper = styled.div`
     position: relative;
@@ -21,10 +22,10 @@ const CustomTypography = styled(Typography)`
     text-shadow: 1px grey;
     font-weight: 300;
     color: #333;
-    padding-bottom: 30px;    
+    padding: 15px 0;    
     @media (max-width: 1024px) {
         ${props => props.smaller ? 'font-size: 1.1rem !important; padding-top: 20px !important;' : 'font-size: 1.25rem !important;'};
-        padding-bottom: 20px;  
+        padding: 10px 0;  
   }
   
 `;
@@ -60,10 +61,11 @@ const index = ({ invitation }) => {
                 <CustomTypography variant="h4">{invitation.where}</CustomTypography>
                 <CustomTypography variant="h4">{invitation.info_1}</CustomTypography>
                 <CustomTypography variant="h4">{invitation.info_2}</CustomTypography>
+                <StarIcon></StarIcon>
                 <CustomTypography variant="h4">{invitation.info_3}</CustomTypography>
                 <CustomGrid>
                     <CustomTypography variant="h4">Dovanos idėja  </CustomTypography>
-                    <MailOutlinedIcon />
+                    <CustomTypography variant="h4"><MailOutlinedIcon /></CustomTypography>
 
                 </CustomGrid>
                 <CustomTypography smaller variant="h5">Apie dalyvavimą prašome pranešti iki <br></br> 2021 - 04 - 22</CustomTypography>
