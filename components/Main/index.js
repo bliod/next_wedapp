@@ -49,6 +49,11 @@ const CustomGrid = styled(Grid)`
 
 const AnoterTypo = styled(Typography)`
     font-family: 'Parisienne', cursive!important;
+    font-size: 2.5rem !important;
+    margin-top: 20px !important;
+    @media (max-width: 1024px) {
+        font-size: 1.5rem !important;
+         }
 `;
 
 

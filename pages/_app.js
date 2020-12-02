@@ -17,6 +17,7 @@ html, body {
             height: 100%;
             margin: 0;
             width: 100%;
+            /* font-family: 'Parisienne', cursive; */
         }
         * {
           box-sizing: border-box;
